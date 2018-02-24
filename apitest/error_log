@@ -1,0 +1,161 @@
+[23-Feb-2018 23:35:36 UTC] PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/leejsmith91/public_html/league/apitest/champions.php on line 11
+[23-Feb-2018 23:35:36 UTC] PHP Warning:  file_get_contents(http://www.lolinfo.co.uk/_site/json/champions.json): failed to open stream: php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/leejsmith91/public_html/league/apitest/champions.php on line 11
+[23-Feb-2018 23:35:36 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/leejsmith91/public_html/league/apitest/champions.php on line 15
+[24-Feb-2018 09:40:04 UTC] PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/leejsmith91/public_html/league/apitest/champions.php on line 11
+[24-Feb-2018 09:40:04 UTC] PHP Warning:  file_get_contents(http://www.lolinfo.co.uk/_site/json/champions.json): failed to open stream: php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/leejsmith91/public_html/league/apitest/champions.php on line 11
+[24-Feb-2018 09:40:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/leejsmith91/public_html/league/apitest/champions.php on line 15
+[24-Feb-2018 09:41:18 UTC] PHP Notice:  Trying to get property of non-object in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:41:18 UTC] PHP Notice:  Trying to get property of non-object in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:41:18 UTC] PHP Notice:  Trying to get property of non-object in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:41:18 UTC] PHP Notice:  Trying to get property of non-object in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:41:18 UTC] PHP Notice:  Trying to get property of non-object in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:41:18 UTC] PHP Notice:  Trying to get property of non-object in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:41:18 UTC] PHP Notice:  Trying to get property of non-object in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:41:18 UTC] PHP Notice:  Trying to get property of non-object in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:41:18 UTC] PHP Notice:  Trying to get property of non-object in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:41:18 UTC] PHP Notice:  Trying to get property of non-object in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:43:08 UTC] PHP Notice:  Trying to get property of non-object in /home/leejsmith91/public_html/league/apitest/champions.php on line 15
+[24-Feb-2018 09:43:08 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/leejsmith91/public_html/league/apitest/champions.php on line 15
+[24-Feb-2018 09:43:30 UTC] PHP Notice:  Trying to get property of non-object in /home/leejsmith91/public_html/league/apitest/champions.php on line 15
+[24-Feb-2018 09:43:30 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/leejsmith91/public_html/league/apitest/champions.php on line 15
+[24-Feb-2018 09:44:53 UTC] PHP Notice:  Trying to get property of non-object in /home/leejsmith91/public_html/league/apitest/champions.php on line 15
+[24-Feb-2018 09:44:53 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/leejsmith91/public_html/league/apitest/champions.php on line 15
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
+[24-Feb-2018 09:45:31 UTC] PHP Notice:  Undefined variable: champion in /home/leejsmith91/public_html/league/apitest/champions.php on line 16
