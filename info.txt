@@ -1,0 +1,9 @@
+Map API
+https://euw1.api.riotgames.com/lol/static-data/v3/maps?locale=en_US&api_key=******
+
+Champion API
+https://euw1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&champListData=info&dataById=false&api_key=******
+
+Champion Image Access
+// IMG URL http://ddragon.leagueoflegends.com/cdn/img/champion/splash/<name>_<num>.png
+// Square http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/ <name>.png
