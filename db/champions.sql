@@ -2,12 +2,12 @@ CREATE TABLE tbl_Champions (
     championID INTEGER NOT NULL,
     champName TEXT NOT NULL,
     title TEXT NOT NULL,
-    difficulty INTEGER NOT NULL,
-    attack INTEGER NOT NULL,
-    defence INTEGER NOT NULL,
-    magic INTEGER NOT NULL,
+    lore TEXT,
+    info TEXT,
     tags TEXT NOT NULL,
     abilityType TEXT NOT NULL,
+    allyTips TEXT,
+    enemyTips TEXT,
     imgFull TEXT NOT NULL,
     PRIMARY KEY (championID)
 ) ENGINE=INNODB;
@@ -74,3 +74,12 @@ CREATE TABLE tbl_ChampionSpells(
     PRIMARY KEY (spellKey),
     FOREIGN KEY (championID) REFERENCES tbl_Champions(championID)
 ) ENGINE=INNODB;
+
+CREATE TABLE ChampionItems (
+    championItemID TEXT NOT NULL,
+    championID INTEGER NOT NULL
+    championBlocks TEXT NOT NULL,
+    champtionMap TEXT NOT NULL,
+    PRIMARY KEY (championItemID),
+    FOREIGN KEY (championID) REFERENCES tbl_Champions(championID)
+)ENGINE=INNODB;

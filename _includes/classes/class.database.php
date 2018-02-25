@@ -22,13 +22,35 @@ class database {
     public function query($strSQL){
         return $strSQL;
     }
-    public function returnInsertID($table, $arr) {
-        if (mysqli_query($this::conn, $sql)) {
-            $last_id = mysqli_insert_id($this::conn);
-            return $last_id;
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($this::conn);
+    public function insertKeyVal($table, $jsonArr) {
+        $sql = '';
+        $insertSQL = '';
+        $keysSQL = '';
+        $updateSQL = '';
+        $sql = 'INSERT INTO ' . $table . ' (';
+        foreach (json_decode($jsonArr,false) as $key => $val) {
+            $keysSQL .= $key;
+            $keysSQL .= ',';
         }
+        $sql .= substr($keysSQL,0,strlen($keysSQL) - 1);
+        $sql .= $keysSQL . ') VALUES (';
+        foreach (json_decode($jsonArr,false) as $key => $val) {
+            $insertSQL .= $jsonArr->$key;
+            $insertSQL .= ',';
+        }
+        $sql .= substr($insertSQL,0,strlen($insertSQL) - 1);
+        $sql .= ')' . $arr . ') ON DUPLICATE KEY UPDATE (';
+        foreach($keys as $key) {
+            $updateSQL .= $key . '=' . $jsonArr->$key . ',';
+        }
+        $sql .= substr($updateSQL,0,strlen($updateSQL) - 1);
+        return $sql;
+        // if (mysqli_query($this::conn, $sql)) {
+        //     $last_id = mysqli_insert_id($this::conn);
+        //     return $last_id;
+        // } else {
+        //     echo "Error: " . $sql . "<br>" . mysqli_error($this::conn);
+        // }
     }
 }
 ?>
