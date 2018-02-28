@@ -14,7 +14,6 @@ $champion_json = json_decode($champion_info, false);
 
 foreach ($champion_json->data as $champion) {
     $championInfo = new ChampionAdmin($champion);
-    $championInfo->updateChampion();
 }
 
 ?>

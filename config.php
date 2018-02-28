@@ -8,5 +8,7 @@
         define('SITEPATH', $_SERVER['DOCUMENT_ROOT']);
     }
     require_once SITEPATH . '/_includes/classes/class.database.php';
+    require_once SITEPATH . '/_includes/code/array.php';
+    global $objDB;
     $objDB = new database();
 ?>

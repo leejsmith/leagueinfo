@@ -1,3 +1,4 @@
+USE leagueinfo_co_uk_www;
 CREATE TABLE tbl_Champions (
     championID INTEGER NOT NULL,
     champName TEXT NOT NULL,
@@ -49,14 +50,14 @@ CREATE TABLE tbl_ChampionSkins(
 ) ENGINE=INNODB;
 
 CREATE TABLE tbl_ChampionSpells(
+	spellID INTEGER AUTO_INCREMENT NOT NULL,
     spellKey TEXT NOT NULL,
     championID INTEGER NOT NULL,
-    spellKey CHAR NOT NULL,
+    spellKeyBinding CHAR NOT NULL,
     spellName TEXT NOT NULL,
     spellToolTip TEXT,
     spellDescription TEXT,
     spellSanitizedDescription TEXT,
-    spellToolTip TEXT,
     spellSanitizedToolTip TEXT,
     spellResource TEXT,
     spellVars TEXT,
@@ -71,15 +72,6 @@ CREATE TABLE tbl_ChampionSpells(
     spellEffect TEXT,
     spellEffectBurn TEXT,
     spellImageFull TEXT,
-    PRIMARY KEY (spellKey),
+    PRIMARY KEY (spellID),
     FOREIGN KEY (championID) REFERENCES tbl_Champions(championID)
 ) ENGINE=INNODB;
-
-CREATE TABLE ChampionItems (
-    championItemID TEXT NOT NULL,
-    championID INTEGER NOT NULL
-    championBlocks TEXT NOT NULL,
-    champtionMap TEXT NOT NULL,
-    PRIMARY KEY (championItemID),
-    FOREIGN KEY (championID) REFERENCES tbl_Champions(championID)
-)ENGINE=INNODB;

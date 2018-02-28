@@ -1,9 +1,8 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
-require_once SITEPATH . '/_includes/classes/class.database.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 
 class ChampionAdmin {
-    private $objDB = NULL;
+    //private $objDB = NULL;
     private $championID = 0;
     private $name = '';
     private $title = '';
@@ -22,13 +21,12 @@ class ChampionAdmin {
 
 
     function __construct($championData){
-        $this->objDB = new database();
         $this->championID = $championData->id;
         $this->name = $championData->name;
         $this->title = $championData->title;
         $this->lore = $championData ->lore;
         $this->info = json_encode($championData->info);
-        $this->allyTip = json_encode($championData->allytips);
+        $this->allyTips = json_encode($championData->allytips);
         $this->enemyTips = json_encode($championData->enemytips);
         $this->stats = json_encode($championData->stats);
         $this->img = $championData->image->full;
@@ -38,11 +36,29 @@ class ChampionAdmin {
         $this->passive = json_encode($championData->passive);
         $this->spells = json_encode($championData->spells);
         $this->recommended = json_encode($championData->recommended);
+        $this->championUpdate();
     }
 
-    function updateChampion(){
+    function getChampionByName($championName){
+        global $objDB;
+        $strSQL = "SELECT championID FROM tbl_Champions WHERE championName LIKE '" . $championName . "'";
+        return $objDB->query($strSQL);
+    }
 
-        echo $this->objDB->insertKeyVal('tbl_ChampionSpells',$this->spells);
+    function championUpdate(){
+        global $objDB;
+        $championMainData = array();
+        $championMainData['championID'] = $this->championID;
+        $championMainData['champName'] = $this->name;
+        $championMainData['title'] = $this->title;
+        $championMainData['lore'] = $this->lore;
+        $championMainData['tags'] = $this->tags;
+        $championMainData['info'] = $this->info;
+        $championMainData['abilityType'] = $this->abilityType;
+        $championMainData['allyTips'] = $this->allyTips;
+        $championMainData['enemyTips'] = $this->enemyTips;
+        $championMainData['imgFull'] = $this->img;
+        $objDB->returnInsertVal('tbl_Champions',$championMainData);
     }
 }
 ?>

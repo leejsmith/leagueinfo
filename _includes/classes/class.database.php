@@ -3,16 +3,18 @@
 
 class database {
     private $hostname = '';
+    private $dbName = '';
     private $username = '';
     private $password = '';
     private static $conn = NULL;
     
     function __construct () {
         $this->hostname = 'localhost';
+        $this->dbName = 'leagueinfo_co_uk_www';
         $this->username = 'lolinfo';
         $this->password = 'hD?DL>#~2k-^N>9D';
         // Create connection
-        $this::$conn = new mysqli($this->hostname, $this->username, $this->password);
+        $this::$conn = new mysqli($this->hostname, $this->username, $this->password, $this->dbName);
 
         // Check connection
         if ($this::$conn->connect_error) {
@@ -20,37 +22,61 @@ class database {
         } 
     }
     public function query($strSQL){
-        return $strSQL;
+        $result = $this::$conn->query(mysqli_real_escape_string($this::$conn, $strSQL));
+        print_r( $result);
+        if ($result->num_rows > 0) {
+            return $result;
+        } else {
+            return NULL;
+        }
     }
-    public function insertKeyVal($table, $jsonArr) {
-        $sql = '';
-        $insertSQL = '';
-        $keysSQL = '';
-        $updateSQL = '';
-        $sql = 'INSERT INTO ' . $table . ' (';
-        foreach (json_decode($jsonArr,false) as $key => $val) {
-            $keysSQL .= $key;
-            $keysSQL .= ',';
+
+    public function returnInsertVal($table,$array) {
+        $strSQL = "INSERT INTO " . $table . " (";
+        $intRowCount = count($array);
+        $intIdx = 0;
+        foreach($array as $key => $val){ 
+            $strSQL .=  mysqli_real_escape_string($this::$conn, $key) ;
+            if ($intIdx < $intRowCount -1) {
+                $strSQL .= ',';
+            }
+            $intIdx += 1;
         }
-        $sql .= substr($keysSQL,0,strlen($keysSQL) - 1);
-        $sql .= $keysSQL . ') VALUES (';
-        foreach (json_decode($jsonArr,false) as $key => $val) {
-            $insertSQL .= $jsonArr->$key;
-            $insertSQL .= ',';
+        $strSQL .= ") VALUES ( ";
+        $intIdx = 0;
+        foreach($array as $key => $val){
+            if (!is_numeric($val)){
+                $strSQL .= "'" . mysqli_real_escape_string($this::$conn, $val) ."'";
+            } else {
+                $strSQL .= mysqli_real_escape_string($this::$conn, $val);
+            }
+
+            if ($intIdx < $intRowCount -1) {
+                $strSQL .= ',';
+            }
+            $intIdx += 1;
         }
-        $sql .= substr($insertSQL,0,strlen($insertSQL) - 1);
-        $sql .= ')' . $arr . ') ON DUPLICATE KEY UPDATE (';
-        foreach($keys as $key) {
-            $updateSQL .= $key . '=' . $jsonArr->$key . ',';
+        $strSQL .= ") ON DUPLICATE KEY UPDATE ";
+        //assume ID is first value
+        $intIdx = 0;
+        foreach($array as $key => $val){
+            if ($intIdx > 0){
+                $strSQL .= mysqli_real_escape_string($this::$conn, $key) . '=';
+                if (!is_numeric($val)){
+                    $strSQL .= "'" . mysqli_real_escape_string($this::$conn, $val) ."'";
+                } else {
+                    $strSQL .= mysqli_real_escape_string($this::$conn, $val);
+                }
+                if ($intIdx < $intRowCount -1) {
+                    $strSQL .= ',';
+                }
+            }
+            
+            $intIdx += 1;
         }
-        $sql .= substr($updateSQL,0,strlen($updateSQL) - 1);
-        return $sql;
-        // if (mysqli_query($this::conn, $sql)) {
-        //     $last_id = mysqli_insert_id($this::conn);
-        //     return $last_id;
-        // } else {
-        //     echo "Error: " . $sql . "<br>" . mysqli_error($this::conn);
-        // }
+        $strSQL .= ";";
+        $this::$conn->query($strSQL);
     }
+    
 }
 ?>
