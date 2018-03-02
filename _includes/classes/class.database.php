@@ -75,7 +75,11 @@ class database {
             $intIdx += 1;
         }
         $strSQL .= ";";
-        $this::$conn->query($strSQL);
+        if (!$this::$conn->query($strSQL)) {
+            return ("Error description: " . mysqli_error($this::$conn));
+        } else {
+            return true;
+        }
     }
     
 }

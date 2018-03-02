@@ -59,6 +59,44 @@ class ChampionAdmin {
         $championMainData['enemyTips'] = $this->enemyTips;
         $championMainData['imgFull'] = $this->img;
         $objDB->returnInsertVal('tbl_Champions',$championMainData);
+       
+        $championStatData = array();
+        $decodedStats = json_decode($this->stats);
+        $championStatData["championID"] = $this->championID;
+        $championStatData["armorperlevel"] = floatval($decodedStats->armorperlevel);
+        $championStatData["attackdamage"] = floatval($decodedStats->attackdamage);
+        $championStatData["mpperlevel"] = floatval($decodedStats->mpperlevel);
+        $championStatData["attackspeedoffset"] = floatval($decodedStats->attackspeedoffset);
+        $championStatData["mp"] = floatval($decodedStats->mp);
+        $championStatData["armor"] = floatval($decodedStats->armor);
+        $championStatData["hp"] = floatval($decodedStats->hp);
+        $championStatData["hpregenperlevel"] = floatval($decodedStats->hpregenperlevel);
+        $championStatData["attackspeedperlevel"] = floatval($decodedStats->attackspeedperlevel);
+        $championStatData["attackrange"] = floatval($decodedStats->attackrange);
+        $championStatData["movespeed"] = floatval($decodedStats->movespeed);
+        $championStatData["attackdamageperlevel"] = floatval($decodedStats->attackdamageperlevel);
+        $championStatData["mpregenperlevel"] = floatval($decodedStats->mpregenperlevel);
+        $championStatData["critperlevel"] = floatval($decodedStats->critperlevel);
+        $championStatData["spellblockperlevel"] = floatval($decodedStats->spellblockperlevel);
+        $championStatData["crit"] = floatval($decodedStats->crit);
+        $championStatData["mpregen"] = floatval($decodedStats->mpregen);
+        $championStatData["spellblock"] = floatval($decodedStats->spellblock);
+        $championStatData["hpregen"] = floatval($decodedStats->hpregen);
+        $championStatData["hpperlevel"] = floatval($decodedStats->hpperlevel);
+        $objDB->returnInsertVal('tbl_ChampionStats',$championStatData);
+
+        $championSkinData = array();
+        $decodedSkins = json_decode($this->skins);
+        foreach($decodedSkins as $skin) {
+            $championSkinData['skinID'] = $skin->id;
+            $championSkinData['championID'] = $this->championID;
+            $championSkinData['num'] = $skin->num;
+            $championSkinData['skinName'] = $skin->name;
+            $objDB->returnInsertVal('tbl_ChampionSkins',$championSkinData);
+        }
+        
+        
+
     }
 }
 ?>

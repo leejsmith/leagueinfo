@@ -4,18 +4,16 @@ if (!ini_get('display_errors')) {
 }
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
-include_once SITEPATH . '/admin/champion/dao.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/admin/champion/dao.php';
 
 $url = SITEPATH . '/_site/json/champions.json'; 
+
 $champion_info = file_get_contents($url);
 
 $champion_json = json_decode($champion_info, false);
 
 foreach ($champion_json->data as $champion) {
-    echo $champion->name . '<br/>';
-    echo json_encode($champion->stats);
+    $championInfo = new ChampionAdmin($champion);
 }
-
-echo $objDB->query('SELECT * FROM tbl_Champions');
 
 ?>
