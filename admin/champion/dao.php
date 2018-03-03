@@ -1,6 +1,8 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
-
+set_time_limit(0);
+ob_start();
+ob_end_flush();
 class ChampionAdmin {
     //private $objDB = NULL;
     private $championID = 0;
@@ -18,6 +20,7 @@ class ChampionAdmin {
     private $passive = '';
     private $spells = '';
     private $recommended = '';
+    private $key = '';
 
 
     function __construct($championData){
@@ -25,6 +28,7 @@ class ChampionAdmin {
         $this->name = $championData->name;
         $this->title = $championData->title;
         $this->lore = $championData ->lore;
+        $this->key = $championData->key;
         $this->info = json_encode($championData->info);
         $this->allyTips = json_encode($championData->allytips);
         $this->enemyTips = json_encode($championData->enemytips);
@@ -51,6 +55,7 @@ class ChampionAdmin {
         $championMainData['championID'] = $this->championID;
         $championMainData['champName'] = $this->name;
         $championMainData['title'] = $this->title;
+        $championMainData['champKey'] = $this->key;
         $championMainData['lore'] = $this->lore;
         $championMainData['tags'] = $this->tags;
         $championMainData['info'] = $this->info;
@@ -93,10 +98,35 @@ class ChampionAdmin {
             $championSkinData['num'] = $skin->num;
             $championSkinData['skinName'] = $skin->name;
             $objDB->returnInsertVal('tbl_ChampionSkins',$championSkinData);
+            $this->saveImage($skin->num);
         }
-        
-        
-
+    }
+    function saveImage($skinID){
+        //Get the file
+        $champNameCleanse = $this->key;
+        $championImagePath = SITEPATH . '/_includes/images/champions/' . $champNameCleanse . '/';
+        if (!file_exists($championImagePath)) {
+            mkdir($championImagePath, 0744, true);
+            echo 'Created Folder: ' . $championImagePath . '</br>';
+        }
+        if ($skinID == 0 && !file_exists($championImagePath . 'square.jpg')) {
+            $content = file_get_contents('http://ddragon.leagueoflegends.com/cdn/img/champion/tiles/' . strtolower($champNameCleanse) . '_' . $skinID . '.jpg');        
+            if ($content){
+                $fp = fopen($championImagePath . 'square.jpg' , "w");
+                fwrite($fp, $content);
+                echo 'File Written: ' . $championImagePath . 'square.jpg';
+                fclose($fp);
+            }
+        }
+        if (!file_exists($championImagePath . $skinID . '.jpg')) {
+            $content = file_get_contents('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' . $champNameCleanse . '_' . $skinID . '.jpg');        
+            if ($content){
+                $fp = fopen($championImagePath . $skinID . '.jpg' , "w");
+                fwrite($fp, $content);
+                echo 'File Written: ' . $championImagePath . $skinID . '.jpg' . '<br/>';
+                fclose($fp);
+            }
+        }
     }
 }
 ?>
