@@ -89,7 +89,7 @@ CREATE TABLE tbl_ChampionSkins(
 ) ENGINE=INNODB;
 
 CREATE TABLE tbl_ChampionSpells(
-	spellID INTEGER AUTO_INCREMENT NOT NULL,
+	spellID VARCHAR(128) NOT NULL,
     spellKey TEXT NOT NULL,
     championID INTEGER NOT NULL,
     spellKeyBinding CHAR NOT NULL,
@@ -112,5 +112,14 @@ CREATE TABLE tbl_ChampionSpells(
     spellEffectBurn TEXT,
     spellImageFull TEXT,
     PRIMARY KEY (spellID),
+    FOREIGN KEY (championID) REFERENCES tbl_Champions(championID)
+) ENGINE=INNODB;
+
+CREATE TABLE tbl_ChampionItems (
+    champItemID VARCHAR(50) NOT NULL,
+    championID INTEGER NOT NULL,
+    map VARCHAR(12) NOT NULL,
+    data TEXT NOT NULL,
+    PRIMARY KEY (champItemID),
     FOREIGN KEY (championID) REFERENCES tbl_Champions(championID)
 ) ENGINE=INNODB;

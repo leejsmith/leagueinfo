@@ -98,7 +98,6 @@ class ChampionAdmin {
             $championSkinData['num'] = $skin->num;
             $championSkinData['skinName'] = $skin->name;
             $objDB->returnInsertVal('tbl_ChampionSkins',$championSkinData);
-            //$this->saveImage($skin->num);
         }
 
         $championItemData = array();
@@ -110,35 +109,81 @@ class ChampionAdmin {
             $championItemData['data'] = json_encode($itemset->blocks);
             $objDB->returnInsertVal('tbl_ChampionItems',$championItemData);
         }
-    }
-    function saveImage($skinID){
-        //Get the file
-        $champNameCleanse = $this->key;
-        $championImagePath = SITEPATH . '/_includes/images/champions/' . $champNameCleanse . '/';
-        if (!file_exists($championImagePath)) {
-            mkdir($championImagePath, 0744, true);
-            echo 'Created Folder: ' . $championImagePath . '</br>';
-        }
-        if ($skinID == 0 && !file_exists($championImagePath . 'square.jpg')) {
-            $content = file_get_contents('http://ddragon.leagueoflegends.com/cdn/img/champion/tiles/' . strtolower($champNameCleanse) . '_' . $skinID . '.jpg');        
-            if ($content){
-                $fp = fopen($championImagePath . 'square.jpg' , "w");
-                fwrite($fp, $content);
-                echo 'File Written: ' . $championImagePath . 'square.jpg';
-                fclose($fp);
+        //spells
+        $passiveDecode = json_decode($this->passive);
+        $passiveData = array();
+        $passiveData['spellID'] = $this->key . '_p';
+        $passiveData['spellKey'] = $passiveDecode->name;
+        $passiveData['championID'] = $this->championID;
+        $passiveData['spellKeyBinding'] = 1;
+        $passiveData['spellName'] = $passiveDecode->name;
+        $passiveData['spellDescription'] = $passiveDecode->description;
+        $passiveData['spellSanitizedDescription'] = $passiveDecode->sanitizedDescription;
+        $passiveData['spellImageFull'] = $passiveDecode->image->full;
+        $objDB->returnInsertVal('tbl_ChampionSpells',$passiveData);
+
+        //active-Spells
+        $spellDecode = json_decode($this->spells);
+        $spell_bindings = array('q','w','e','r');
+        for ($i = 0; $i < 4; $i++){
+            $spellData = array();
+            $spellData['spellID'] = $this->key . '_' . $spell_bindings[$i];
+            $spellData['spellKey'] = $spellDecode{$i}->key;
+            $spellData['championID'] = $this->championID;
+            $spellData['spellKeyBinding'] = $i + 2;
+            $spellData['spellName'] = $spellDecode{$i}->name;
+            if (!empty($spellDecode{$i}->tooltip)){
+                $spellData['spellToolTip'] = $spellDecode{$i}->tooltip;
             }
-        }
-        $imgHeader = get_headers('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' . $champNameCleanse . '_' . $skinID . '.jpg');
-        print_r($imgHeader);
-        echo '<br/>';
-        if (!file_exists($championImagePath . $skinID . '.jpg')) {
-            $content = file_get_contents('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' . $champNameCleanse . '_' . $skinID . '.jpg');        
-            if ($content){
-                $fp = fopen($championImagePath . $skinID . '.jpg' , "w");
-                fwrite($fp, $content);
-                echo 'File Written: ' . $championImagePath . $skinID . '.jpg' . '<br/>';
-                fclose($fp);
+            if (!empty($spellDecode{$i}->tooltip)){
+                $spellData['spellDescription'] = $spellDecode{$i}->description;
             }
+            if (!empty($spellDecode{$i}->description)){
+                $spellData['spellSanitizedDescription'] = $spellDecode{$i}->sanitizedDescription;
+            }
+            if (!empty($spellDecode{$i}->sanitizedTooltip)){
+                $spellData['spellSanitizedToolTip'] = $spellDecode{$i}->sanitizedTooltip;
+            }
+            if (!empty($spellDecode{$i}->resource)){
+                $spellData['spellResource'] = $spellDecode{$i}->resource;
+            }
+            if (!empty($spellDecode{$i}->vars)){
+                $spellData['spellVars'] = json_encode($spellDecode{$i}->vars);
+            }
+            if (!empty($spellDecode{$i}->costType)){
+                $spellData['spellCostType'] = $spellDecode{$i}->costType;
+            }
+            if (!empty($spellDecode{$i}->maxrank)){
+                $spellData['spellMaxRank'] = $spellDecode{$i}->maxrank;
+            }
+            if (!empty($spellDecode{$i}->cooldown)){
+                $spellData['spellCooldown'] = json_encode($spellDecode{$i}->cooldown);
+            }
+            if (!empty($spellDecode{$i}->cooldownBurn)){
+                $spellData['spellCooldownBurn'] = $spellDecode{$i}->cooldownBurn;
+            }
+            if (!empty($spellDecode{$i}->range)){
+                $spellData['spellRange'] = json_encode($spellDecode{$i}->range);
+            }
+            if (!empty($spellDecode{$i}->rangeBurn)){
+                $spellData['spellRangeBurn'] = $spellDecode{$i}->rangeBurn;
+            }
+            if (!empty($spellDecode{$i}->cost)){
+                $spellData['spellCost'] = json_encode($spellDecode{$i}->cost);
+            }
+            if (!empty($spellDecode{$i}->costBurn)){
+                $spellData['spellCostBurn'] = $spellDecode{$i}->costBurn;
+            }
+            if (!empty($spellDecode{$i}->effect)){
+                $spellData['spellEffect'] = json_encode($spellDecode{$i}->effect);
+            }
+            if (!empty($spellDecode{$i}->effectBurn)){
+                $spellData['spellEffectBurn'] = json_encode($spellDecode{$i}->effectBurn);
+            }
+            if (!empty($spellDecode{$i}->image->full)){
+                $spellData['spellImageFull'] = $spellDecode{$i}->image->full;
+            }
+            $objDB->returnInsertVal('tbl_ChampionSpells',$spellData);
         }
     }
 }

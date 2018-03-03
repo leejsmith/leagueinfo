@@ -35,7 +35,7 @@ if ($_SESSION['apiVersion'] == ''){
         mysqli_error($objDB->getConnection());
     }
 }
-
+echo '<style type="text/css">* {font-size:10px !important}</style>';
 include_once SITEPATH . '/admin/sync/maps.php';
 include_once SITEPATH . '/admin/sync/items.php';
 include_once SITEPATH . '/admin/sync/champions.php';

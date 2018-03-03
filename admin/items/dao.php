@@ -71,7 +71,6 @@ class ItemAdmin {
         $itemData['itemFrom'] = $this->itemFrom;
         $itemData['itemDepth'] = $this->itemDepth;
         $objDB->returnInsertVal('tbl_items',$itemData);
-        //$this->saveImage($this->itemID);
         $itemToMapsData = array();
         $itemMapData = json_decode($this->itemMaps);
         foreach($itemMapData as $itemMap => $val){
@@ -79,25 +78,6 @@ class ItemAdmin {
                 $itemToMapsData['itemID'] = $this->itemID;
                 $itemToMapsData['mapID'] = $itemMap;
                 $objDB->returnInsertVal('tbl_ItemToMaps',$itemToMapsData);
-            }
-        }
-    }
-
-    function saveImage($itemID){
-        //Get the file
-        $imagePath = SITEPATH . '/_includes/images/items/';
-        if (!file_exists($imagePath)) {
-            mkdir($imagePath, 0744, true);
-            echo 'Created Folder: ' . $imagePath . '</br>';
-        }
-
-        if (!file_exists($imagePath . $itemID . '.jpg')) {
-            $content = file_get_contents('http://ddragon.leagueoflegends.com/cdn/8.4.1/img/item/' . $itemID . '.png');        
-            if ($content){
-                $fp = fopen($imagePath . $itemID . '.jpg' , "w");
-                fwrite($fp, $content);
-                echo 'File Written: ' . $imagePath . $itemID . '.jpg' . '<br/>';
-                fclose($fp);
             }
         }
     }
