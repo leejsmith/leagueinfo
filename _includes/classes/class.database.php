@@ -21,9 +21,14 @@ class database {
             die("Connection failed: " . $conn->connect_error);
         } 
     }
+
+    public function getConnection(){
+        return $this::$conn;
+    }
+
     public function query($strSQL){
         $result = $this::$conn->query(mysqli_real_escape_string($this::$conn, $strSQL));
-        print_r( $result);
+        print_r($result);
         if ($result->num_rows > 0) {
             return $result;
         } else {

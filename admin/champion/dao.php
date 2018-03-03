@@ -98,7 +98,17 @@ class ChampionAdmin {
             $championSkinData['num'] = $skin->num;
             $championSkinData['skinName'] = $skin->name;
             $objDB->returnInsertVal('tbl_ChampionSkins',$championSkinData);
-            $this->saveImage($skin->num);
+            //$this->saveImage($skin->num);
+        }
+
+        $championItemData = array();
+        $decodedItems = json_decode($this->recommended);
+        foreach ($decodedItems as $itemset){
+            $championItemData['champItemID'] = $itemset->title;
+            $championItemData['championID'] = $this->championID;
+            $championItemData['map'] = $itemset->map;
+            $championItemData['data'] = json_encode($itemset->blocks);
+            $objDB->returnInsertVal('tbl_ChampionItems',$championItemData);
         }
     }
     function saveImage($skinID){
@@ -118,6 +128,9 @@ class ChampionAdmin {
                 fclose($fp);
             }
         }
+        $imgHeader = get_headers('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' . $champNameCleanse . '_' . $skinID . '.jpg');
+        print_r($imgHeader);
+        echo '<br/>';
         if (!file_exists($championImagePath . $skinID . '.jpg')) {
             $content = file_get_contents('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' . $champNameCleanse . '_' . $skinID . '.jpg');        
             if ($content){

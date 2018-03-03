@@ -1,3 +1,6 @@
+Version API
+https://euw1.api.riotgames.com/lol/static-data/v3/versions?api_key=RGAPI-527af68d-df82-4acb-a8a2-fc8598eb48a8
+
 Map API
 https://euw1.api.riotgames.com/lol/static-data/v3/maps?locale=en_US&api_key=******
 

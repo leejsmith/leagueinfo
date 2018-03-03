@@ -1,0 +1,110 @@
+{
+    "data": {
+        "8": {
+            "mapName": "The Crystal Scar",
+            "image": {
+                "full": "map8.png",
+                "group": "map",
+                "sprite": "map0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 0
+            },
+            "mapId": 8
+        },
+        "10": {
+            "mapName": "The Twisted Treeline",
+            "image": {
+                "full": "map10.png",
+                "group": "map",
+                "sprite": "map0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 48
+            },
+            "mapId": 10
+        },
+        "11": {
+            "mapName": "Summoner's Rift",
+            "image": {
+                "full": "map11.png",
+                "group": "map",
+                "sprite": "map0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 96
+            },
+            "mapId": 11
+        },
+        "12": {
+            "mapName": "Howling Abyss",
+            "image": {
+                "full": "map12.png",
+                "group": "map",
+                "sprite": "map0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 144
+            },
+            "mapId": 12
+        },
+        "14": {
+            "mapName": "Butcher's Bridge",
+            "image": {
+                "full": "map14.png",
+                "group": "map",
+                "sprite": "map0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 192
+            },
+            "mapId": 14
+        },
+        "16": {
+            "mapName": "Cosmic Ruins",
+            "image": {
+                "full": "map16.png",
+                "group": "map",
+                "sprite": "map0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 240
+            },
+            "mapId": 16
+        },
+        "18": {
+            "mapName": "Valoran City Park",
+            "image": {
+                "full": "map18.png",
+                "group": "map",
+                "sprite": "map0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 288
+            },
+            "mapId": 18
+        },
+        "19": {
+            "mapName": "Substructure 43",
+            "image": {
+                "full": "map19.png",
+                "group": "map",
+                "sprite": "map0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 336
+            },
+            "mapId": 19
+        }
+    },
+    "version": "8.4.1",
+    "type": "map"
+}
