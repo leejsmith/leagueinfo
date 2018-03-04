@@ -44,7 +44,7 @@ class ItemAdmin {
         $this->itemGoldSell = $itemData->gold->sell;
         $this->itemGoldBase = $itemData->gold->base;
         $this->itemPurchasable = $itemData->gold->purchasable;
-        if (!empty($itemData->itemDepth)){
+        if (!empty($itemData->depth)){
             $this->itemDepth = $itemData->depth;
         } else {
             $this->itemDepth = 1;
@@ -66,7 +66,6 @@ class ItemAdmin {
         $itemData['itemGoldSell'] = $this->itemGoldSell;
         $itemData['itemGoldBase'] = $this->itemGoldBase;
         $itemData['itemPurchasable'] = $this->itemPurchasable;
-        $itemData['itemTags'] = $this->itemTags;
         $itemData['itemInto'] = $this->itemInto;
         $itemData['itemFrom'] = $this->itemFrom;
         $itemData['itemDepth'] = $this->itemDepth;
@@ -78,6 +77,16 @@ class ItemAdmin {
                 $itemToMapsData['itemID'] = $this->itemID;
                 $itemToMapsData['mapID'] = $itemMap;
                 $objDB->returnInsertVal('tbl_ItemToMaps',$itemToMapsData);
+            }
+        }
+        if (!empty($this->itemTags)){
+            $itemToTagsData = array();
+            $itemTagData = json_decode($this->itemTags);
+            foreach($itemTagData as $tag){
+                $itemToTagsData['itemTagID'] = $this->itemID . '_' . $tag ;
+                $itemToTagsData['itemID'] = $this->itemID;
+                $itemToTagsData['tag'] = $tag;
+                $objDB->returnInsertVal('tbl_ItemTags',$itemToTagsData);
             }
         }
     }

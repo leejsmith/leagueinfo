@@ -27,9 +27,9 @@ class database {
     }
 
     public function query($strSQL){
-        $result = $this::$conn->query(mysqli_real_escape_string($this::$conn, $strSQL));
-        print_r($result);
-        if ($result->num_rows > 0) {
+        $result = mysqli_query($this::$conn, $strSQL);
+        echo mysqli_error($this::$conn);
+        if (mysqli_num_rows($result) > 0) {
             return $result;
         } else {
             return NULL;
@@ -80,6 +80,14 @@ class database {
             $intIdx += 1;
         }
         $strSQL .= ";";
+        if (!$this::$conn->query($strSQL)) {
+            return ("Error description: " . mysqli_error($this::$conn));
+        } else {
+            return true;
+        }
+    }
+
+    public function insertUpdate($strSQL) {
         if (!$this::$conn->query($strSQL)) {
             return ("Error description: " . mysqli_error($this::$conn));
         } else {

@@ -32,8 +32,12 @@ if ($_SESSION['apiVersion'] == ''){
 
     if($boolIsNewVersion){
         $objDB->getConnection()->query('UPDATE tbl_SiteConfig SET confValue=\''.$newVer . '\' WHERE confName=\'apiVersion\'');
+        $_SESSION['newVersion'] = true;
         mysqli_error($objDB->getConnection());
+    } else {
+        $_SESSION['newVersion'] = false;
     }
+
 }
 echo '<style type="text/css">* {font-size:10px !important}</style>';
 include_once SITEPATH . '/admin/sync/maps.php';

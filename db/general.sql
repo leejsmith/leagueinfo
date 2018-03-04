@@ -30,6 +30,14 @@ CREATE TABLE tbl_Items(
     PRIMARY KEY (itemID)
 ) ENGINE=INNODB;
 
+CREATE TABLE tbl_ItemTags(
+    itemTagID INTEGER AUTO_INCREMENT NOT NULL,
+    itemID INTEGER NOT NULL,
+    tag TEXT,
+    PRIMARY KEY(itemTagID),
+    FOREIGN KEY (itemID) REFERENCES tbl_Items(itemID)
+) ENGINE=INNODB;
+
 CREATE TABLE tbl_ItemToMaps (
     itemID INTEGER NOT NULL,
     mapID INTEGER NOT NULL,
