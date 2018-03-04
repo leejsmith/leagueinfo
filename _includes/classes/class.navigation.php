@@ -59,40 +59,47 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
             $navOutput .= '"items":{';
             $navOutput .= '"title":"Items","url":"/Items","subitems":{';
             foreach ($alphabet as $letter){
-                $navOutput .= '"' . $letter . '":{';
-                $navOutput .= '"title":"' . strtoupper($letter) . '",';
-                $navOutput .= '"url":"/items/' . $letter . '",';
-                $navOutput .= '"subitems":{';
+               
                 $result = $objDB->query("SELECT itemID, itemName FROM tbl_Items WHERE itemName LIKE '" . mysqli_real_escape_string($objDB->getConnection(), $letter) . "%' ORDER BY itemName");
                 if(!$result == NULL){
-                $itemCount = mysqli_num_rows($result);
-                $idx = 0;
-                while ($row = $result->fetch_assoc()){
-                    $itemNameClean = str_replace(' ','',str_replace('\'','',strtolower($row['itemName'])));
-                    $navOutput .= '"' . $row['itemID'] . '":{';
-                    $navOutput .= '"title":"' . $row['itemName'] . '",';
-                    $navOutput .= '"url":"/items/' . $letter . '/' . $itemNameClean . '",';
-                    $navOutput .= '"square":"' . $row['itemID'] . '.png"';
-                    $idx++;
-                    if ($idx < $itemCount){
-                        $navOutput .='},';
-                    } else {
-                        $navOutput .='}';
+                    $navOutput .= '"' . $letter . '":{';
+                    $navOutput .= '"title":"' . strtoupper($letter) . '",';
+                    $navOutput .= '"url":"/items/' . $letter . '",';
+                    $navOutput .= '"subitems":{';
+                    $itemCount = mysqli_num_rows($result);
+                    $idx = 0;
+                    while ($row = $result->fetch_assoc()){
+                        $itemNameClean = str_replace(' ','',str_replace('\'','',strtolower($row['itemName'])));
+                        $navOutput .= '"' . $row['itemID'] . '":{';
+                        $navOutput .= '"title":"' . $row['itemName'] . '",';
+                        $navOutput .= '"url":"/items/' . $letter . '/' . $itemNameClean . '",';
+                        $navOutput .= '"square":"' . $row['itemID'] . '.png"';
+                        $idx++;
+                        if ($idx < $itemCount){
+                            $navOutput .='},';
+                        } else {
+                            $navOutput .='}';
+                        }
+                        
                     }
-                    
-                }
-                $navOutput .= '}';
-                if ($letter == 'z'){
                     $navOutput .= '}';
+                    if ($letter == 'z'){
+                        $navOutput .= '}';
+                    } else {
+                        $navOutput .= '},';
+                    }
                 } else {
-                    $navOutput .= '},';
+                    $navOutput .= '"' . $letter . '":{';
+                    $navOutput .= '"title":"' . strtoupper($letter) . '",';
+                    $navOutput .= '"url":"/items/' . $letter . '"';
+                    if ($letter == 'z'){
+                        $navOutput .= '}';
+                    } else {
+                        $navOutput .= '},';
+                    }
                 }
             }
-            }
-            $navOutput .= '}';
-            $navOutput .= '}';
-            $navOutput .= '}';
-            $navOutput .= '}';
+
             $navOutput .= '}';
             $navOutput .= '}';
             $navOutput .= '}';
@@ -116,21 +123,16 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
     }
 
 class NavigationTree {
-    private $tree = null;
     private $root = null;
 
     function __construct($json){
         $this->tree = array();
-        $this->root = new Node('Main Menu', '/', null);
+        $this->root = new Node('Main Menu', null, '/');
         $this->root->addChild($json);
     }
 
     function getRoot(){
         return $this->root;
-    }
-
-    function getTree(){
-        return $this->tree;
     }
 }
 
@@ -148,16 +150,17 @@ class Node{
     }
 
     function addChild($json){
-        if ($json != null){
-            $childJson = json_decode($json);
+        if ($json != null && !empty($childJson = json_decode($json))){
             foreach($childJson as $childNode){
                 if (!empty($childNode->title)){
                     $hasChildren = empty($childNode->subitems) ? null : json_encode($childNode->subitems);
-                    $childNode = new Node($childNode->title, $childNode->url , $this);
+                    $childNode = new Node($childNode->title, $this,$childNode->url);
                     $childNode->addChild($hasChildren);
                 }
                 array_push($this->children, $childNode);
             }
+        } else {
+            $this->children = null;
         }
     }
 
@@ -174,7 +177,15 @@ class Node{
     }
 
     function getChildren(){
-        return $children;
+        return $this->children;
+    }
+
+    function getURL(){
+        return $this->url;
+    }
+
+    function getTitle(){
+        return $this->name;
     }
 }
 ?>
